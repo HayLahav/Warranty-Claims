@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 776 402" width="1200" role="img" aria-label="System architecture: offline build, runtime claim flow, results and UI">
+  <style>text{font-family:"Segoe UI",-apple-system,Helvetica,Arial,sans-serif}</style>
+  <rect x="-8" y="-8" width="776" height="402" rx="8" fill="#ffffff"/>
+  <defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0L10,5L0,10z" fill="#4a4a47"/></marker></defs>
+    <g font-size="10" font-weight="700" fill="#1b1b1a">
+    <text x="4" y="12">1 · Offline build (once per product)</text>
+    <text x="4" y="141">2 · Runtime (LangGraph)</text>
+    <text x="4" y="312">3 · Results and UI (Streamlit), reading config/ and reports/</text>
+  </g>
+    <g font-size="8.5" fill="#4a4a47">
+    <rect x="410" y="3" width="11" height="10" rx="2" fill="#eaf2fc" stroke="#2a78d6"/><text x="425" y="11.5">LLM</text>
+    <rect x="455" y="3" width="11" height="10" rx="2" fill="#fff4e8" stroke="#eb6834"/><text x="470" y="11.5">computer vision</text>
+    <rect x="545" y="3" width="11" height="10" rx="2" fill="#f1f1ee" stroke="#1b1b1a" stroke-width="1.4"/><text x="560" y="11.5">deterministic</text>
+    <rect x="626" y="3" width="11" height="10" rx="2" fill="#fff" stroke="#6250d6" stroke-dasharray="3 2"/><text x="641" y="11.5">advisory VLM</text>
+    <rect x="707" y="3" width="11" height="10" rx="2" fill="#f5f4f0" stroke="#b9b8b1"/><text x="722" y="11.5">data</text>
+  </g>
+
+    <g font-size="8.5" text-anchor="middle" fill="#4a4a47">
+    <rect x="4" y="24" width="128" height="62" rx="5" fill="#f5f4f0" stroke="#b9b8b1"/>
+    <text x="68" y="44" font-size="10.5" font-weight="600" fill="#1b1b1a">MVTec AD</text><text x="68" y="59">bottle + screw images</text><text x="68" y="72">+ pixel defect masks</text>
+    <rect x="160" y="24" width="128" height="62" rx="5" fill="#fff4e8" stroke="#eb6834"/>
+    <text x="224" y="44" font-size="10.5" font-weight="600" fill="#1b1b1a">Fit PatchCore</text><text x="224" y="59">on good images only</text><text x="224" y="72">Colab GPU · per product</text>
+    <rect x="316" y="24" width="128" height="62" rx="5" fill="#fff4e8" stroke="#eb6834"/>
+    <text x="380" y="44" font-size="10.5" font-weight="600" fill="#1b1b1a">Score test set</text><text x="380" y="59">anomaly map per image</text><text x="380" y="72">max inside the product</text>
+    <rect x="472" y="24" width="128" height="62" rx="5" fill="#f1f1ee" stroke="#1b1b1a" stroke-width="1.6"/>
+    <text x="536" y="44" font-size="10.5" font-weight="600" fill="#1b1b1a">Calibrate, 5-fold CV</text><text x="536" y="59">uncertainty band,</text><text x="536" y="72">area ceiling, coverage</text>
+    <rect x="628" y="24" width="128" height="62" rx="5" fill="#f5f4f0" stroke="#b9b8b1"/>
+    <text x="692" y="44" font-size="10.5" font-weight="600" fill="#1b1b1a">Deployed config</text><text x="692" y="59">config/thresholds.json</text><text x="692" y="72">+ out-of-fold results</text>
+  </g>
+
+    <g font-size="8.5" text-anchor="middle" fill="#4a4a47">
+    <rect x="4" y="150" width="100" height="56" rx="5" fill="#fff" stroke="#4a4a47"/>
+    <text x="54" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">Claim</text><text x="54" y="182">message + photo</text><text x="54" y="195">+ ordered product</text>
+    <rect x="128" y="150" width="100" height="56" rx="5" fill="#eaf2fc" stroke="#2a78d6"/>
+    <text x="178" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">route</text><text x="178" y="182">LLM · intent</text><text x="178" y="195">JSON + allow-list</text>
+    <rect x="252" y="150" width="118" height="56" rx="5" fill="#fff4e8" stroke="#eb6834"/>
+    <text x="311" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">inspect</text><text x="311" y="182">PatchCore + segment</text><text x="311" y="195">score, map, area</text>
+    <rect x="394" y="150" width="110" height="56" rx="5" fill="#f1f1ee" stroke="#1b1b1a" stroke-width="1.6"/>
+    <text x="449" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">decide</text><text x="449" y="182">policy rules</text><text x="449" y="195">fail-closed + reasons</text>
+    <rect x="528" y="150" width="112" height="56" rx="5" fill="#eaf2fc" stroke="#2a78d6"/>
+    <text x="584" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">respond</text><text x="584" y="182">LLM reply</text><text x="584" y="195">post-check → template</text>
+    <rect x="664" y="150" width="92" height="56" rx="5" fill="#fff" stroke="#4a4a47"/>
+    <text x="710" y="168" font-size="10.5" font-weight="600" fill="#1b1b1a">Reply</text><text x="710" y="182">verdict + reasons</text><text x="710" y="195">+ agent trace</text>
+    <rect x="528" y="224" width="112" height="52" rx="5" fill="#fff" stroke="#6250d6" stroke-dasharray="4 3"/>
+    <text x="584" y="241" font-size="10" font-weight="600" fill="#1b1b1a">cross_check (VLM)</text><text x="584" y="255">photo only, advisory</text><text x="584" y="267">note for the specialist</text>
+  </g>
+    <g font-size="8.5" fill="#4a4a47">
+    <rect x="190" y="220" width="200" height="20" rx="4" fill="#fff" stroke="#dcdbd5"/><text x="198" y="233.5">results question → Claims Analyst page</text>
+    <rect x="190" y="246" width="200" height="20" rx="4" fill="#fff" stroke="#dcdbd5"/><text x="198" y="259.5">off-topic → polite decline</text>
+    <rect x="190" y="272" width="200" height="20" rx="4" fill="#fff" stroke="#dcdbd5"/><text x="198" y="285.5">unclassifiable → ESCALATE (router_failed)</text>
+  </g>
+    <g font-size="8" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="710" y="219" fill="#4a4a47" font-weight="600" font-size="8.5">Verdicts</text>
+    <rect x="664" y="223" width="92" height="13" rx="2" fill="#1baf7a"/><text x="710" y="232.5">APPROVE</text>
+    <rect x="664" y="239" width="92" height="13" rx="2" fill="#6250d6"/><text x="710" y="248.5">REJECT</text>
+    <rect x="664" y="255" width="92" height="13" rx="2" fill="#b07800"/><text x="710" y="264.5">ESCALATE</text>
+    <rect x="664" y="271" width="92" height="13" rx="2" fill="#c2410c"/><text x="710" y="280.5">NEEDS_INFO</text>
+  </g>
+
+    <g font-size="8.5" text-anchor="middle" fill="#4a4a47">
+    <rect x="4" y="320" width="170" height="60" rx="5" fill="#fff" stroke="#4a4a47"/>
+    <text x="89" y="339" font-size="10.5" font-weight="600" fill="#1b1b1a">Evaluation page</text><text x="89" y="354">confusion matrix, Wilson CIs</text><text x="89" y="367">error analysis figures</text>
+    <rect x="186" y="320" width="170" height="60" rx="5" fill="#fff" stroke="#4a4a47"/>
+    <text x="271" y="339" font-size="10.5" font-weight="600" fill="#1b1b1a">Heatmap gallery</text><text x="271" y="354">all 243 maps: predicted vs</text><text x="271" y="367">real damage (IoU, Dice)</text>
+    <rect x="368" y="320" width="200" height="60" rx="5" fill="#eaf2fc" stroke="#2a78d6"/>
+    <text x="468" y="339" font-size="10.5" font-weight="600" fill="#1b1b1a">Claims Analyst</text><text x="468" y="354">LLM chooses among 8 deterministic tools</text><text x="468" y="367">grounding check on every number</text>
+    <rect x="580" y="320" width="176" height="60" rx="5" fill="#fff" stroke="#4a4a47"/>
+    <text x="668" y="339" font-size="10.5" font-weight="600" fill="#1b1b1a">273 automated tests</text><text x="668" y="354">unit · integration · golden</text><text x="668" y="367">eval · live (real LLMs)</text>
+  </g>
+
+    <g stroke="#4a4a47" stroke-width="1.3" fill="none" marker-end="url(#b)">
+    <path d="M132,55H158"/><path d="M288,55H314"/><path d="M444,55H470"/><path d="M600,55H626"/>
+    <path d="M104,178H126"/><path d="M228,178H250"/><path d="M370,178H392"/><path d="M504,178H526"/><path d="M640,178H662"/>
+    <path d="M178,206V282H188"/><path d="M178,230H188"/><path d="M178,256H188"/>
+    <path d="M449,206V250H526"/><path d="M584,224V208"/>
+  </g>
+  <g stroke="#7a7a75" stroke-width="1.2" fill="none" stroke-dasharray="4 3" marker-end="url(#b)">
+    <path d="M224,86V116H311V148"/><path d="M692,86V126H449V148"/>
+  </g>
+  <g font-size="8.5" fill="#7a7a75">
+    <text x="232" y="111">model weights</text>
+    <text x="600" y="121">thresholds</text>
+  </g>
+  <text x="458" y="245" font-size="8.5" fill="#b07800" font-weight="700">ESCALATE only</text>
+</svg>
