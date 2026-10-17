@@ -1,0 +1,15 @@
+Chapter start times (0.8x speed) in demo.mp4 / demo_subtitled.mp4
+0:00.0  1. Opening
+1:41.5  2. Approved claim
+2:54.0  3. Uncertain claim
+4:01.4  4a. Attack: wrong item
+4:50.1  4b. Attack: prompt injection
+5:23.2  5. Heatmap gallery
+6:12.5  5b. Gallery: lint on the backdrop
+6:47.8  6. Evaluation
+7:25.5  7. Claims analyst
+7:54.7  8. Building it with Claude Code
+8:50.5  9. Close
+9:13.9  10. Future work
+
+End: 9:39.0
