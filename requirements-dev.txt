@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest>=8
+ipykernel>=6
+nbclient>=0.10
+nbformat>=5
